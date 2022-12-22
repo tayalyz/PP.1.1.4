@@ -11,7 +11,6 @@ public class Util {
 
     public static Connection getConnection() {
         try {
-            //Driver driver = new com.mysql.cj.jdbc.Driver();
             Class.forName("com.mysql.cj.jdbc.Driver");
             DriverManager.deregisterDriver(driver);
 
