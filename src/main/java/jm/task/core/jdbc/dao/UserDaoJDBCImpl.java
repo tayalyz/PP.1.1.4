@@ -10,7 +10,7 @@ import java.util.List;
 import static jm.task.core.jdbc.util.Util.getConnection;
 
 public class UserDaoJDBCImpl implements UserDao {
-    private static Connection connection = getConnection();
+    private Connection connection = getConnection();
 
     public UserDaoJDBCImpl() {
     }
@@ -26,7 +26,7 @@ public class UserDaoJDBCImpl implements UserDao {
                        age TINYINT CHECK (age>0 and age<128) NULL,
                        PRIMARY KEY (id))""");
             connection.commit();
-        } catch (SQLException e){
+        } catch (SQLException e) {
             try {
                 connection.rollback();
             } catch (SQLException ex) {
