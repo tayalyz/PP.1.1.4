@@ -96,6 +96,7 @@ public class UserDaoJDBCImpl implements UserDao {
                 userS.add(user);
             }
             System.out.println(userS);
+            connection.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
